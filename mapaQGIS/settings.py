@@ -130,11 +130,13 @@ STATICFILES_DIRS = [
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-
-#LEAFLET_CONFIG = {
-#    'DEFAULT_CENTER': (0, 0),
-#    'DEFAULT_ZOOM': 5,
-#}
+MEDIA_ROOT = 'static/website/images/'
 
 LOGIN_REDIRECT_URL = ''
 LOGOUT_REDIRECT_URL = ''
+
+LEAFLET_CONFIG = {
+    'TILES': 'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+    'WMS_URL': 'http://localhost:8080/cgi-bin/qgis_mapserv.fcgi?map=/path/to/your/qgis/project.qgs',
+    'WMS_LAYER': 'your_layer_name',
+}

@@ -42,13 +42,16 @@
         <option value="39.47024,-0.3768049">Valencia [Comunidad Valenciana]</option>
     </select>
 
+    <button onclick="dibujoLínea()">Linea</button>
+
 </head>
 <body>
 
     <div id="mapDevol">
-    
         
-
+    </div>
+    <div id="linea" style="position:absolute;">
+    
     </div>
 
     <!--<script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js"
@@ -59,6 +62,7 @@
    crossorigin=""></script>
    <script src="Leaflet-MiniMap-master/dist/Control.MiniMap.min.js"></script>
    <script src="{% static 'website/js/mapDevol.js' %}"></script>
+   <script src="{% static 'website/js/linea.js' %}"></script>
     
 </body>
 </html>

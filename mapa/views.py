@@ -1,11 +1,18 @@
 from django.shortcuts import render
+from django.http import JsonResponse
+from django.conf import settings
+import os
 
 # Create your views here.
 def home(request):
     return render(request, 'home.html')
 
 def mapaQGIS(request):
-    return render(request, 'mapaQGIS.html')
+    ruta_archivo = os.path.join(settings.MEDIA_ROOT, 'service/datos.geojson')
+
+    with open(ruta_archivo, 'r') as f:
+        datos = f.read()
+    return JsonResponse(datos, safe=False)
 
 def informacionFormulario(request):
     return render(request, 'informacionFormulario.html')
